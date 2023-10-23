@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Zetta&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = '../static/pagestyle.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = '../static/about.css') }}">
+
+    <title>Home</title>
+</head>
+
+<body>  
+    <div class="wrong-container">
+        <script src="../static/sidebarscript.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <div class="index-container">
+            <a class = "index-text">Home</a>
+        </div>
+
+        <div class="sidebar-icon-container">
+            <a class="icon-sidebar" onmouseenter="toggleSidebar()">
+            <img src="../static/sidebar.gif" class="icon-image">
+            </a>
+        </div>
+
+        <div class="sidebar" id="sidebar" onmouseleave="toggleSidebar()">
+            <!-- Add your sidebar content here -->
+            <a href="data.html">Income and Expenses</a>
+            <a href="add">Add Income/Expense</a>
+            <a href="savings">Saving Goal</a>
+        </div>
+    </div>  
+    
+
+    <div class="tab-container">
+        <div class="tab">
+          <button class="tab-button active" onclick="openTab(event, 'tab1')">Income</button>
+        </div>
+        <div class="tab">
+          <button class="tab-button" onclick="openTab(event, 'tab2')">Expenses</button>
+        </div>
+        <div class="tab">
+          <button class="tab-button" onclick="openTab(event, 'tab3')">Total Overall</button>
+        </div>
+ 
+        <!-- Add more tabs as needed -->
+      </div>
+      
+      <div id="tab1" class="tab-content">
+        <h0><u>Total Income:</u>   <font color = green>+</font>£{{'%0.2f'| format(totalIncome|float)}}</h0>
+
+        {% for item in incomes %}
+          <div class="history-container"><p><font color = green>+</font>£{{'%0.2f'| format(item.income|float)}}, {{item.incometime}}</div></p>
+        {% endfor %}
+
+      </div>
+      
+      <div id="tab2" class="tab-content">
+        <h0><u>Total Expendatures:</u>   <font color = red>-</font>£{{'%0.2f'| format((totalExpense*-1)|float)}}</h0>
+
+        {% for item in expenses %}
+          <div class="history-container"><p><font color = red>-</font>£{{'%0.2f'| format(item.expense|float)}}, {{item.expensetime}}</div></p>
+        {% endfor %}
+
+      </div>
+
+      <div id="tab3" class="tab-content">
+        <h0><u>Total Overall</u>  
+        {% if total > 0 %}
+        <font color = green>+</font>£{{'%0.2f'| format(total|float)}}</h0>
+        {% else %}
+        <font color = red>-</font>£{{'%0.2f'| format((total*-1)|float)}}</h0>
+        {% endif %}
+      </div>
+
+      <script src="../static/about.js"></script>
+
+</body>
+</html>

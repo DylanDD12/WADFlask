@@ -1,0 +1,157 @@
+body{
+    background-image: url('dylan.png'); 
+    background-size: cover;
+    background-position: center top;
+    background-repeat: repeat;
+    height: 100vh;
+    margin: 0;
+}
+
+.index-container {
+    display: flex;
+    align-items: flex;
+    justify-content: center;
+    margin: 25px;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+}
+
+.index-text {
+    display: inline-block;
+    background: transparent;
+    border: none;
+    color: #ffffff; 
+    font-family: 'Lexend Zetta', sans-serif; 
+    font-size: 2.5vw; 
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.wrong-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    /* Hide overflow to prevent scrolling */
+}
+.icon-button {
+    background: transparent;
+    margin: 1%;
+    border: none;
+    color: #333333; 
+    font-family: 'Lexend Zetta', sans-serif; 
+    font-size: 3%; 
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.right-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap:nowrap;
+    position: fixed; 
+    margin-right: 2%; 
+    margin-top: 0.8%;
+    transition: color 0.3s ease; /* Smooth text color transition on hover */
+    max-width: 100%;
+}
+
+.icon-button:hover img{
+    filter: opacity(0.5);
+}
+
+.icon-image {
+    width: 3.5vw; 
+    height: 3.5vw; 
+}
+
+
+.icon-sidebar {
+    background: transparent;
+    border: none;
+    color: #333333; 
+    font-family: 'Lexend Zetta', sans-serif; 
+    font-size: 3%; 
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sidebar-icon-container {
+    margin-left: 1%; 
+    margin-top: 1%;
+    margin-right: auto; 
+    z-index: 2; 
+}
+
+.sidebar {
+    width: 0;
+    height: 100%;
+    position: fixed;
+    white-space: pre-line;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    padding-top: 6%; /* Space for the sidebar icon */
+    z-index: 1;
+    background-image: url(sidebar2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+}
+
+.sidebar.active {
+    width: 20%; 
+}
+
+.sidebar a {
+    font-size: 1vw;
+    font-family: 'Lexend Zetta', sans-serif;
+    margin-left: 5%;
+    color: #1c1c1c; 
+    align-items: center;
+    margin-top: 7.7%;
+    margin-right: 2%;
+    text-transform: uppercase;
+    display: inline-block;
+    border: none;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth text color transition on hover */
+    cursor: pointer;
+}
+
+.sidebar a:hover{
+    filter: opacity(0.5);
+}
+
+.history-container{
+    margin-right: 1%;
+    margin-top: 1%;
+    padding-right: 2%;
+    padding-left: 2%;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    color: #e3e3e3;
+    font-family: 'Lexend Zetta', sans-serif; 
+    font-size: 1.25vw; 
+    border: 2px solid #ffffff;
+    border-radius: 2px;
+}
+
+h0{
+    font-family: 'Lexend Zetta', sans-serif; 
+    font-size: 2vw; 
+    color: #ffffff; 
+}
+
+.edit-button{
+        width: 3vw; 
+        height: 3vw;
+        display: flexbox;
+        
+}

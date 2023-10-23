@@ -1,0 +1,77 @@
+.tab-container {
+    display: flex;
+    justify-content: space-between; /* Center and space evenly horizontally */
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 1%;
+    background-image: url(sidebar2.png );
+    border: 2px solid #ffffff;
+    border-radius: 2px;
+
+  }
+  
+  .tab {
+    flex: 1;
+    text-align: center; /* Center the text inside the tabs */
+  }
+  
+  .tab-button {
+    background-color: transparent;
+    font-family: 'Lexend Zetta', sans-serif; 
+    font-size: 1.5vw; 
+    color: #ffffff;
+    border: none;
+    outline: none;
+    padding: 1% 2%;
+    margin: 2%;
+    transition: color 0.3s ease; /* Smooth text color transition on hover */
+    cursor: pointer;
+  }
+  
+  .tab-button:hover {
+    opacity: 50%;
+  }
+  
+  .tab-content {
+    display: none;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-right: 25%;
+    padding-left: 10%;
+    padding-bottom: 3%;
+    padding-top: 2%;
+    color: #e3e3e3;
+    background-color: #1c1c1c;
+    font-family: 'Lexend Zetta', sans-serif; 
+    font-size: 1.25vw; 
+    border: 2px solid #ffffff;
+    border-radius: 2px;
+  }
+
+  .text-box {
+    flex: 1;
+    text-align: center; /* Center the text inside the tabs */
+    
+  }
+
+.tab-button.active {
+  color: #3b3b3b;
+  text-decoration: underline;
+}
+
+a { color:#e3e3e3 }
+
+.incomecontainer{
+  margin-right: 1%;
+  padding-right: 5%;
+  padding-left: 5%;
+  padding-bottom: 3%;
+  padding-top: 2%;
+  color: #e3e3e3;
+  font-family: 'Lexend Zetta', sans-serif; 
+  font-size: 1.25vw; 
+  border: 2px solid #ffffff;
+  border-radius: 2px;
+}

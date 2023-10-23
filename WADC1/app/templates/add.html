@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Zetta&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = '../static/pagestyle.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = '../static/about.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = '../static/form.css') }}">
+
+    <title>Add Income/Expense</title>
+</head>
+
+<body>  
+    <div class="wrong-container">
+        <script src="../static/sidebarscript.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <div class="index-container">
+            <a class = "index-text">Add Income/Expense</a>
+        </div>
+
+        <div class="sidebar-icon-container">
+            <a class="icon-sidebar" onmouseenter="toggleSidebar()">
+            <img src="../static/sidebar.gif" class="icon-image">
+            </a>
+        </div>
+
+        <div class="sidebar" id="sidebar" onmouseleave="toggleSidebar()">
+            <a href="../">Income and Expenses</a>
+            <a href="add">Add Income/Expense</a>
+            <a href="savings">Savings Goal</a>
+        </div>
+    </div>  
+    
+
+    <div class="tab-container">
+        <div class="tab">
+          <button class="tab-button active" onclick="openTab(event, 'tab1')">Add Income</button>
+        </div>
+        <div class="tab">
+          <button class="tab-button" onclick="openTab(event, 'tab2')">Add Expense</button>
+        </div>
+ 
+        <!-- Add more tabs as needed -->
+      </div>
+      <div class="container"></div>
+        <div id="tab1" class="tab-content">     
+
+          <form action="" method="post" name="income">
+            {{ form1.hidden_tag() }}
+            <p>
+              <label>Amount  <b>£</b></label>
+              {{ form1.income(type = "number", step="0.01", placeholder="Income Here") }}<br>
+              {% for error in form1.income.errors %}
+               [{{ error }}]
+              {% endfor %}
+            </p>
+
+            <p>
+              <label>Reason for Income:</label>
+              {{ form1.incometime(type = "string", placeholder="Reason Here") }}<br>
+              {% for error in form1.incometime.errors %}
+               [{{ error }}]
+              {% endfor %}
+            </p>
+
+            <p><input type="submit" value="Add Income"></p>
+            
+            {% for item in incomes %}
+              <div class="incomecontainer"><p><font color = green>+</font>£{{item.income}}, {{item.incometime}}
+              <div class="edit-button">            
+              <img src="../static/sidebar.gif" class="edit-button">
+              </div>
+              
+              </div></p>
+            {% endfor %}
+            
+          </form>
+
+        </div>
+        
+        <div id="tab2" class="tab-content">     
+          <form action="" method="post" name="expense">
+            {{ form2.hidden_tag() }}
+            <p>
+              <label>Amount  <b>£</b></label>
+              {{ form2.expense(type = "number", step="0.01", placeholder="Expense Here") }}<br>
+              {% for error in form2.expense.errors %}
+               [{{ error }}]
+              {% endfor %}
+            </p>
+
+            <p>
+              <label>Reason for Expense:</label>
+              {{ form2.expensetime(type = "string", placeholder="Reason Here") }}<br>
+              {% for error in form2.expensetime.errors %}
+               [{{ error }}]
+              {% endfor %}
+            </p>
+
+            <p><input type="submit" value="Add Expense"></p>
+
+            {% for item in expenses %}
+              <div class="incomecontainer"><p><font color = red>-</font>£{{item.expense}}, {{item.expensetime}}</div></p>
+            {% endfor %}
+
+          </form>
+        </div>
+      </div>
+
+      <script src="../static/about.js"></script>
+
+</body>
+</html>
